@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+#confirmOverlay {
+    /* style on confirm overlay */
+    position: fixed;
+    overflow: hidden;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(182,242,252,1.00);
+    opacity: 0.95;
+    transition: 0.2s;
+    width: 100vw;
+    height: 0;
+    /* height adjusted to expand overlay */
+}
+
+#confirmOverlay p {
+    /* style on text portion of confirm overlay */
+    line-height: 80vh;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 5vw;
+    opacity: 1.0;
+    color: black;
+}
+
+#confirmOverlay a {
+    /* style on cross to close confirm overlay */
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 45px;
+    font-size: 90px;
+}
+
+#confirmOverlay a:hover {
+    color: #cccccc;
+}
+
+
+#confirmButton{
+    background-color:green;
+    color:white;
+    float:left;
+    
+}
+
+#resetButton{
+    background-color: red;
+    color:white;
+    float:right;
+}
+.container {
+    background-color: var(--bg-panel);
+    padding: 30px;
+    width: 80%;
+    padding-top: 10px;
+    border-radius: 15px;
+    color: var(--color-text);
+    margin: 10px auto;
+    max-width: 1024px;
+    box-shadow: 15px 15px 32px rgba(0, 0, 0, 0.062);
+}
+
+h2{
+    color: darkblue;
+    text-align: center;
+
+   margin:30px; 
+      font-family: 'Russo One', sans-serif; 
+}
+
+
+[type='text'], [type='date'], [type='email'], [type='number'], [type="textarea"], [type="tel"] {
+	display: inline-block;
+	padding: 0.5rem;
+	background: transparent;
+	vertical-align: middle;
+	width: 100%;
+	max-width: 100%;
+	border: 1px solid #cdcdcd;
+	border-radius: 4px;
+	font-size: 0.95rem;
+}
+
+table {
+	width: 80%;
+	margin: auto;
+}
+
+header{
+    background-color: #96d3e2;
+    height:100px;
+    color:darkblue;
+    font-size:130%;
+    text-align:left;
+    padding: 20px 150px;
+     font-family: 'Russo One', sans-serif;
+  
+}
+
+.logo {
+	float: left;
+	display: inline-block;
+	height: 100%;
+	width: 10%;
+}
+.main_content{
+    width:80%;
+    margin: auto;
+    padding:10px;
+    background-color:white;
+       font-family: 'Roboto', sans-serif;
+}
+.float_right{
+    float:right;
+}
+
+footer{
+    background-color: #96d3e2;
+    height:100px;
+    color:darkblue;
+    font-size:100%;
+    text-align:left;
+    padding: 20px 150px;
+     font-family: 'Russo One', sans-serif;
+}
+
+
+
+.roomCard {
+    /* style for the room card container */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 25vw;
+}
+
+.roomCard img { 
+    width:25vw;
+}
+
+.textOverlay {
+    /* style of overlay on room cards, only displayed on hover */
+    background-color: #76CEDC;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 20vw;
+    text-align: center;
+    opacity: 0.0;
+    transition: 0.2s;
+    font-size: 30px;
+}
+
+.textOverlay h2 {
+    font-size: 2vw;
+}
+
+.textOverlay:hover {
+    opacity: 0.9;
+}
+
+
+@media only screen and (max-width: 600px) {
+	
+	h1{
+		font-size:20px;
+	}
+	
+	footer p {
+		font-size:12px;
+	}
+	
+    /* media queries for resizing program for a mobile screen. */
+   .roomCard img { 
+    width:60vw;
+}
+    .roomCard{
+       width:60vw; 
+    }
+    .textOverlay h2{
+width:60vw;    
+    }
+    
+ 
+}
+

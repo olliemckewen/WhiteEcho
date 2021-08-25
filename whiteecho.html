@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="../style.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+    
+    <header>
+    <img class="logo" height="100" src="../white_echo logo.png"><h1 class="header">White Echo Motel Reservations</h1>
+    
+    
+    
+    </header>
+<body>
+      <div class="main_content"> <div class="container">
+          <h2>Select your check in date:</h2>
+            <label>Check in date:</label> <input id="checkInDate" type="date" class="addCheck">
+            
+			<h2>Select how long you want to stay:</h2>
+            <label>Number of nights:</label><input id="numberNights" type="number" min="1" max="10" class="addCheck"></div> 
+        <div class="container ">
+    <h2>Click on the room to make a booking</h2>
+ 
+				<div class="roomCard" data-name="Executive Studio" data-price="23" data-beds="2" >
+				<img src="../executive suite.jpg">
+				<div class="textOverlay">
+					<h2>Exective Suite - $23</h2><br>
+				</div>
+				<p>Exective Suite - $23</p>
+              
+			</div>
+	
+			<div class="roomCard" data-name="Family Studio" data-price="34">
+                <img src="../studio room.jpg">
+				<div class="textOverlay">
+					<h2>Family Studio - $23</h2><br>
+				</div>
+				<p>Family Studio - $23</p>
+			</div>
+		
+			<div class="roomCard" data-name="Studio Room" data-price="54">
+				<img src="../two bedroom suite.jpg">
+				<div class="textOverlay">
+				<h2>Studio Room</h2>
+					</div>
+				<p>Studio Room</p>
+			</div>
+		
+			<div class="roomCard"  data-name="Two bedroom suite" data-price="53">
+				<img src="../family suite.jpg">
+				<div class="textOverlay">
+				<h2>Two bedroom suite</h2>
+				</div>
+				<p>Two bedroom suite</p>
+				
+			</div>
+         
+          </div><!-- closing off the container-->
+     <div class="container">   
+           <h2 class>Why not induldge yourself</h2>
+          	<p>Why not take the stress out of your visit and add some extra special services to your stay with us.</p>
+	 <label><input class="addCheck"  data-price="0" type="checkbox" value="Cot">Cot - FREE</label> 
+                <label><input class="addCheck" data-price="60" type="checkbox" value="Massage">Massage $60</label>
+                <label><input class="addCheck"  data-price="50" type="checkbox" value="Facial">Facial $50</label>
+                <label><input class="addCheck"  data-price="0" type="checkbox" value="Breakfast">Breakfast $25 per room/day</label>
+    </div>
+           <div class="container">
+    <h2 id="roomInformation">Booking Information:</h2>
+ <table>
+ 
+  <tr>
+    <td>Room</td>
+    <td><div id="roomOutput"></div></td>
+  </tr>
+  <tr>
+    <td>Price per night</td>
+      <td><div id="priceOutput"></div></td>
+  </tr>
+      <tr>
+    <td>Check in date</td>
+      <td><div id="dateOutput"></div></td>
+  </tr>
+       <tr>
+    <td>Number of Nights</td>
+      <td><div id="nightsOutput"></div></td>
+  </tr>
+          <tr>
+    <td>Extras</td>
+      <td><div id="extrasOutput"></div></td>
+  </tr>
+             <tr>
+    <td>Breakfast</td>
+      <td><div id="breakfastOutput"></div></td>
+  </tr>
+           <tr>
+    <td>Total Price</td>
+      <td><div id="totalPriceOutput"></div></td>
+  </tr>
+  
+  
+</table>
+              </div>
+           <div class="container">
+          <!-- inputs for customer details -->
+			<h2>Enter your details</h2><label>First name:</label> <input autocomplete="on" id="firstNameInput" placeholder="John" required="" title="Enter your first name" type="text"><br>
+			<label>Last name:</label> <input autocomplete="on" id="lastNameInput" placeholder="Smith" required="" title="Enter your last name" type="text" ><br>
+			<label>Email address:</label> <input autocomplete="on" id="emailInput" placeholder="jonhsmith@gmail.com" required="" title="Enter your email address" type="email"  ><br>
+			<label>Cellphone:</label><input autocomplete="on" id="cellphoneInput" placeholder="0274822556" required="" title="Enter cellphone address" type="text" ><br>
+			   <label>Additional comments</label><br><input type="textArea" placeholder="Please add any comments you have here ...." max="300">
+			<br>
+              
+             <button type="button" onclick="checkInputs()" id="confirmButton">Confirm Booking</button>
+    
+          </div>
+          
+          <!-- Overlay displayed when the data has been pushed to firebase -->
+	<div id="confirmOverlay">
+		<p>Your booking has been confirmed</p>
+		<a href="javascript:void(0)" onclick=" document.getElementById('confirmOverlay').style.height = '0'">&times;</a>
+	</div>
+	
+          
+          
+          <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDLo4syE3VipAKY4mgslAoYlLGpe57I92g",
+    authDomain: "echo-motel.firebaseapp.com",
+    databaseURL: "https://echo-motel.firebaseio.com",
+    projectId: "echo-motel",
+    storageBucket: "echo-motel.appspot.com",
+    messagingSenderId: "87492761445",
+    appId: "1:87492761445:web:f6d733dfea5b828985338c"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+          
+          
+   <script src="whiteecho.js"></script>
+</div>
+    
+     <footer><img src="../white_echo logo.png" class="float_right" width="120">
+			<p>White Eco Motel<br>
+			2 Arthur Street, City Rise, Dunedin , 9016<br>
+			(03) 477-5277<br>
+			white-ecomotels@gmail.com</p>
+		</footer>  
+</body>
+         
+</html>
